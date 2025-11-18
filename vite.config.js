@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "./", // crucial for drag-and-drop deploy
+  base: "./" // crucial for GitHub Pages
 });
