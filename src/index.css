@@ -1,0 +1,120 @@
+/* Pinterest Aesthetic Soft Clouds */
+.cloud {
+  position: absolute;
+  opacity: 0.4;
+  filter: blur(18px);
+  animation: cloudFloat 35s linear infinite;
+}
+
+@keyframes cloudFloat {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(1px);
+  animation: sparkleFloat 3s infinite ease-in-out;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* --------------------------------------- */
+/* AESTHETIC LOGIN PAGE GLOBAL ANIMATIONS  */
+/* --------------------------------------- */
+
+/* Background gradient shifting */
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Soft glowing gradient blobs */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Floating particles (used in LoginPage) */
+.particle {
+  position: fixed;
+  bottom: -20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+  animation: floatUp linear infinite;
+}
+
+/* Particle float animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Ensures particles float above background but under UI */
+#particle-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+/* Gradient glowing aesthetic blobs */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: 0.9;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
